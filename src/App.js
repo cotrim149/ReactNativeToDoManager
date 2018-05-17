@@ -5,11 +5,8 @@
  */
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+
+import Login from './screens/Login';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -28,37 +25,8 @@ export default class App extends Component<Props> {
     // alignItems em relação aos filhos
 
     return (
-      <View ref='Main' style={{ flex: 1, flexDirection: 'column', backgroundColor: '#000'}} >
-        <View ref='First' style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-end', margin: 40, borderColor: 'yellow', borderWidth: 1 }} >
-          <View style={{ height: 50, width: 50, backgroundColor: 'powderblue' }} />
-          <View style={{ height: 50, width: 50, backgroundColor: 'skyblue' }} />
-          <View style={{ height: 50, width: 50, backgroundColor: 'steelblue' }} />
-        </View>
-
-        <View ref='Second' style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', margin: 40, borderColor: 'red', borderWidth: 1 }} >
-          <View style={{ height: 50, width: 50, backgroundColor: 'powderblue' }} />
-          <View style={{ height: 50, width: 50, backgroundColor: 'skyblue' }} />
-          <View style={{ height: 50, width: 50, backgroundColor:'steelblue' }} />
-        </View>
-
-    </View>
-
+      <Login>
+      </Login>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  bigBlue: {
-    color: 'blue',
-    fontSize: 50
-  },
-  smallRed: {
-    color: 'red',
-    fontSize: 20
-  }
-});
