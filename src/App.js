@@ -21,11 +21,28 @@ import {
 // type Props = {};
 export default class App extends Component<Props> {
   render() {
+
+    // flex em relação a você mesmo
+    // flexDirection em relação aos filhos
+    // justifyContent em relação aos filhos
+    // alignItems em relação aos filhos
+
     return (
-      <View style = {styles.container}>
-        <Text style = {styles.bigBlue}>Big Blue</Text>
-        <Text style = {styles.smallRed}>Small Red</Text>
-      </View>
+      <View ref='Main' style={{ flex: 1, flexDirection: 'column', backgroundColor: '#000'}} >
+        <View ref='First' style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-end', margin: 40, borderColor: 'yellow', borderWidth: 1 }} >
+          <View style={{ height: 50, width: 50, backgroundColor: 'powderblue' }} />
+          <View style={{ height: 50, width: 50, backgroundColor: 'skyblue' }} />
+          <View style={{ height: 50, width: 50, backgroundColor: 'steelblue' }} />
+        </View>
+
+        <View ref='Second' style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', margin: 40, borderColor: 'red', borderWidth: 1 }} >
+          <View style={{ height: 50, width: 50, backgroundColor: 'powderblue' }} />
+          <View style={{ height: 50, width: 50, backgroundColor: 'skyblue' }} />
+          <View style={{ height: 50, width: 50, backgroundColor:'steelblue' }} />
+        </View>
+
+    </View>
+
     );
   }
 }
