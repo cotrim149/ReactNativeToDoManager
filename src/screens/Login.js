@@ -9,23 +9,24 @@ import {
 	StyleSheet,
 } from 'react-native';
 
+const img = require('../assets/logo_to_do_list.png');
+
 export default class Login extends Component {
 	render() {
 		return (
 			<KeyboardAvoidingView style={styles.container} behavior='padding'>
-
 				<View style={styles.topView}>
-					<Image style={styles.img}/>
+					<Image style={styles.img} source = {img}/>
 				</View>
+
 				<View style={styles.bottomView}>
 					<TextInput style={styles.input} placeholder='Email' keyboardType={'email-address'} autoCapitalize='none'/>
-
 					<TextInput style={styles.input} placeholder='Password' secureTextEntry={true}/>
 
 					<Button title='Sign In'/>
 
 					<View style={styles.textConteiner}>
-						<Text> Not a member? Lets </Text>
+						<Text>Not a member? Lets </Text>
 						<Text style={styles.textRegister}>Register.</Text>
 					</View>
 
@@ -33,24 +34,37 @@ export default class Login extends Component {
 			</KeyboardAvoidingView>
 		);
 	}
-}
 
+}
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		flexDirection: 'column' },
+		flexDirection: 'column'
+	},
 	topView: {
-		justifyContent: 'center', alignItems: 'center',
+		justifyContent: 'center',
+		alignItems: 'center',
 		padding: 50
 	},
 	img: {
-		width: 200,
+		width: 350,
 		height: 200
 	},
 	bottomView: {
-		flexDirection: 'column', paddingRight: 20, paddingLeft: 20
-	}, input: {
+		flexDirection: 'column',
+		paddingRight: 20,
+		paddingLeft: 20
+	},
+	input: {
 		marginBottom: 20
+	},
+	textConteiner: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		marginTop: 20
+	},
+	textRegister: {
+		fontWeight: 'bold'
 	}
 });
