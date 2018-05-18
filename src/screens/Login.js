@@ -9,10 +9,16 @@ import {
 	StyleSheet,
 } from 'react-native';
 
-const img = require('../assets/logo_to_do_list.png');
-
 export default class Login extends Component {
+
+	constructor(props){
+		super(props);
+		this.state = {email: '', password: ''};
+	}
+
 	render() {
+		const img = require('../assets/logo_to_do_list.png');
+
 		return (
 			<KeyboardAvoidingView style={styles.container} behavior='padding'>
 				<View style={styles.topView}>
@@ -20,10 +26,24 @@ export default class Login extends Component {
 				</View>
 
 				<View style={styles.bottomView}>
-					<TextInput style={styles.input} placeholder='Email' keyboardType={'email-address'} autoCapitalize='none'/>
-					<TextInput style={styles.input} placeholder='Password' secureTextEntry={true}/>
+					<TextInput style={styles.input}
+					placeholder='Email'
+					keyboardType={'email-address'}
+					autoCapitalize='none'
+					value = {this.props.email}
+					onChangeText = {(text) =>
+						this.setState({email: text})
+					}/>
 
-					<Button title='Sign In'/>
+					<TextInput style={styles.input} placeholder='Password' secureTextEntry={true} autoCapitalize='none'
+					onChangeText = {(text) =>
+						this.setState({password: text})
+					}/>
+
+					<Button title='Sign In'
+					onPress = {() =>
+						alert(this.state.email + '\n' + this.state.password)
+					}/>
 
 					<View style={styles.textConteiner}>
 						<Text>Not a member? Lets </Text>

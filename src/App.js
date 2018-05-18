@@ -25,8 +25,7 @@ export default class App extends Component<Props> {
     // alignItems em relação aos filhos
 
     return (
-      <Login>
-      </Login>
+      <Login email = 'myemail@email.com'/>
     );
   }
 }
